@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="OutputFile" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">output.txt</Value>
     </Setting>
   </Settings>
 </SettingsFile>

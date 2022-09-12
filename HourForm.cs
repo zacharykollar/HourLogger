@@ -36,10 +36,24 @@ namespace HourLogger
             {
                 ChangeOutputFile();
             }
+            WriteToFile(0);
             Working = false;
+            GetHoursWorked();
         }
 
-
+        /// <summary>
+        /// Gets the hours worked from the logfile and puts it on the screen
+        /// </summary>
+        private void GetHoursWorked()
+        {
+            var lines = File.ReadLines(OutputFile);
+            double hoursWorked = 0;
+            foreach (var line in lines)
+            {
+                hoursWorked += double.Parse(line.Trim());
+            }
+            textboxHours.Text = hoursWorked.ToString();
+        }
 
 
         /// <summary>
@@ -66,6 +80,7 @@ namespace HourLogger
             Working = false;
             double hoursWorked = DateTime.Now.Subtract(StartTime).TotalHours;
             WriteToFile(hoursWorked);
+            GetHoursWorked();
         }
         
         private void StartWork()

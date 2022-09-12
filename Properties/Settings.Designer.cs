@@ -25,7 +25,7 @@ namespace HourLogger.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("output.txt")]
         public string OutputFile {
             get {
                 return ((string)(this["OutputFile"]));
