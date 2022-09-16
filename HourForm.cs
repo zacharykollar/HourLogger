@@ -97,6 +97,7 @@ namespace HourLogger
             startTime = DateTime.Now;
         }
 
+        #region Designer Event Handlers
         private void ButtonStartEndWork_Click(object sender, EventArgs e)
         {
             if (working)
@@ -124,6 +125,8 @@ namespace HourLogger
         private void ButtonNewWeek_Click(object sender, EventArgs e)
         {
             File.WriteAllText(OutputFile, string.Empty);
+            GetHoursWorked();
         }
+        #endregion
     }
 }
