@@ -73,6 +73,7 @@ namespace HourLogger
             {
                 sw.WriteLine(hours);
             }
+            GetHoursWorked();
         }
         
         private void StopWork()
@@ -81,7 +82,6 @@ namespace HourLogger
             double hoursWorked = Math.Round(DateTime.Now.Subtract(StartTime).TotalHours, 2);
             buttonStartEndWork.Text = "Start Work";
             WriteToFile(hoursWorked);
-            GetHoursWorked();
         }
         
         private void StartWork()
@@ -91,7 +91,7 @@ namespace HourLogger
             startTime = DateTime.Now;
         }
 
-        private void buttonStartEndWork_Click(object sender, EventArgs e)
+        private void ButtonStartEndWork_Click(object sender, EventArgs e)
         {
             if (working)
             {
@@ -101,6 +101,12 @@ namespace HourLogger
             {
                 StartWork();
             }
+        }
+
+        private void ButtonInputHours_Click(object sender, EventArgs e)
+        {
+            WriteToFile((double) UpDownInputHours.Value);
+            UpDownInputHours.Value = 0;
         }
     }
 }

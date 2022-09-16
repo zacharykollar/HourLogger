@@ -86,6 +86,7 @@
             this.buttonInputHours.TabIndex = 4;
             this.buttonInputHours.Text = "Confirm";
             this.buttonInputHours.UseVisualStyleBackColor = true;
+            this.buttonInputHours.Click += new System.EventHandler(this.ButtonInputHours_Click);
             // 
             // buttonStartEndWork
             // 
@@ -96,7 +97,7 @@
             this.buttonStartEndWork.TabIndex = 5;
             this.buttonStartEndWork.Text = "Starting Work?";
             this.buttonStartEndWork.UseVisualStyleBackColor = true;
-            this.buttonStartEndWork.Click += new System.EventHandler(this.buttonStartEndWork_Click);
+            this.buttonStartEndWork.Click += new System.EventHandler(this.ButtonStartEndWork_Click);
             // 
             // textBoxLoggedHours
             // 
