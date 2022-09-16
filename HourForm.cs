@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -112,6 +113,17 @@ namespace HourLogger
         {
             WriteToFile((double) UpDownInputHours.Value);
             UpDownInputHours.Value = 0;
+        }
+
+        /// <summary>
+        /// Clears the output file.
+        /// TODO: autosend email capability?
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ButtonNewWeek_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(OutputFile, string.Empty);
         }
     }
 }

@@ -118,6 +118,7 @@
             this.buttonNewWeek.TabIndex = 7;
             this.buttonNewWeek.Text = "New Week";
             this.buttonNewWeek.UseVisualStyleBackColor = true;
+            this.buttonNewWeek.Click += new System.EventHandler(this.ButtonNewWeek_Click);
             // 
             // HourForm
             // 
