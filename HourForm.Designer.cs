@@ -35,6 +35,7 @@
             this.buttonInputHours = new System.Windows.Forms.Button();
             this.buttonStartEndWork = new System.Windows.Forms.Button();
             this.textBoxLoggedHours = new System.Windows.Forms.TextBox();
+            this.buttonNewWeek = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UpDownInputHours)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             this.UpDownInputHours.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.UpDownInputHours.Location = new System.Drawing.Point(12, 252);
             this.UpDownInputHours.Name = "UpDownInputHours";
-            this.UpDownInputHours.Size = new System.Drawing.Size(270, 39);
+            this.UpDownInputHours.Size = new System.Drawing.Size(289, 39);
             this.UpDownInputHours.TabIndex = 1;
             // 
             // textboxHours
@@ -73,16 +74,16 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(12, 215);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(270, 34);
+            this.label2.Size = new System.Drawing.Size(284, 34);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Hours Worked Recently:";
+            this.label2.Text = "Hours Worked Recently:  ";
             // 
             // buttonInputHours
             // 
             this.buttonInputHours.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonInputHours.Location = new System.Drawing.Point(12, 297);
             this.buttonInputHours.Name = "buttonInputHours";
-            this.buttonInputHours.Size = new System.Drawing.Size(150, 49);
+            this.buttonInputHours.Size = new System.Drawing.Size(147, 49);
             this.buttonInputHours.TabIndex = 4;
             this.buttonInputHours.Text = "Confirm";
             this.buttonInputHours.UseVisualStyleBackColor = true;
@@ -108,6 +109,16 @@
             this.textBoxLoggedHours.Size = new System.Drawing.Size(289, 39);
             this.textBoxLoggedHours.TabIndex = 6;
             // 
+            // buttonNewWeek
+            // 
+            this.buttonNewWeek.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.buttonNewWeek.Location = new System.Drawing.Point(165, 297);
+            this.buttonNewWeek.Name = "buttonNewWeek";
+            this.buttonNewWeek.Size = new System.Drawing.Size(136, 49);
+            this.buttonNewWeek.TabIndex = 7;
+            this.buttonNewWeek.Text = "New Week";
+            this.buttonNewWeek.UseVisualStyleBackColor = true;
+            // 
             // HourForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -115,6 +126,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonNewWeek);
             this.Controls.Add(this.textBoxLoggedHours);
             this.Controls.Add(this.buttonStartEndWork);
             this.Controls.Add(this.buttonInputHours);
@@ -139,5 +151,6 @@
         private Button buttonInputHours;
         private Button buttonStartEndWork;
         private TextBox textBoxLoggedHours;
+        private Button buttonNewWeek;
     }
 }
