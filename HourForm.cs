@@ -25,7 +25,6 @@ namespace HourLogger
                 Properties.Settings.Default.OutputFile = value;
             }
         }
-
         public DateTime StartTime { get => startTime; }
 
         public HourForm()
@@ -42,7 +41,7 @@ namespace HourLogger
         }
 
         /// <summary>
-        /// Gets the hours worked from the logfile and puts it on the screen
+        /// Gets the hours worked from the logfile and puts it on the screen in textboxHours.
         /// </summary>
         private void GetHoursWorked()
         {
@@ -64,9 +63,9 @@ namespace HourLogger
             throw new NotImplementedException();
         }
         /// <summary>
-        /// Writes to the output file, appending to the end
+        /// Writes to the output file, appending to the end.
         /// </summary>
-        /// <param name="str"></param>
+        /// <param name="hours">The number of hours as a double. can be any number of digits, but two decimal places perferred.</param>
         public void WriteToFile(double hours)
         {
             using( StreamWriter sw = new StreamWriter(OutputFile))
@@ -76,6 +75,9 @@ namespace HourLogger
             GetHoursWorked();
         }
         
+        /// <summary>
+        /// Called via the stop button or an overtime condition. Handles calling the WriteToFile and switches button text.
+        /// </summary>
         private void StopWork()
         {
             Working = false;
@@ -84,6 +86,9 @@ namespace HourLogger
             WriteToFile(hoursWorked);
         }
         
+        /// <summary>
+        /// Called via the start button. Handles switching the start time on, and handles changing button text.
+        /// </summary>
         private void StartWork()
         {
             Working = true;
