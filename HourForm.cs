@@ -61,7 +61,7 @@ namespace HourLogger
         /// </summary>
         private void ChangeOutputFile()
         {
-
+            throw new NotImplementedException();
         }
         /// <summary>
         /// Writes to the output file, appending to the end
