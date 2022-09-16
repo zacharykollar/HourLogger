@@ -78,7 +78,8 @@ namespace HourLogger
         private void StopWork()
         {
             Working = false;
-            double hoursWorked = DateTime.Now.Subtract(StartTime).TotalHours;
+            double hoursWorked = Math.Round(DateTime.Now.Subtract(StartTime).TotalHours, 2);
+            buttonStartEndWork.Text = "Start Work";
             WriteToFile(hoursWorked);
             GetHoursWorked();
         }
@@ -86,6 +87,7 @@ namespace HourLogger
         private void StartWork()
         {
             Working = true;
+            buttonStartEndWork.Text = "Stop Work";
             startTime = DateTime.Now;
         }
 
