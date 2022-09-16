@@ -68,7 +68,7 @@ namespace HourLogger
         /// <param name="hours">The number of hours as a double. can be any number of digits, but two decimal places perferred.</param>
         public void WriteToFile(double hours)
         {
-            using( StreamWriter sw = new StreamWriter(OutputFile))
+            using( StreamWriter sw = File.AppendText(OutputFile))
             {
                 sw.WriteLine(hours);
             }
