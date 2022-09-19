@@ -83,7 +83,7 @@
             this.buttonInputHours.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.buttonInputHours.Location = new System.Drawing.Point(12, 297);
             this.buttonInputHours.Name = "buttonInputHours";
-            this.buttonInputHours.Size = new System.Drawing.Size(147, 49);
+            this.buttonInputHours.Size = new System.Drawing.Size(289, 49);
             this.buttonInputHours.TabIndex = 4;
             this.buttonInputHours.Text = "Confirm";
             this.buttonInputHours.UseVisualStyleBackColor = true;
@@ -112,9 +112,9 @@
             // buttonNewWeek
             // 
             this.buttonNewWeek.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.buttonNewWeek.Location = new System.Drawing.Point(165, 297);
+            this.buttonNewWeek.Location = new System.Drawing.Point(12, 352);
             this.buttonNewWeek.Name = "buttonNewWeek";
-            this.buttonNewWeek.Size = new System.Drawing.Size(136, 49);
+            this.buttonNewWeek.Size = new System.Drawing.Size(289, 49);
             this.buttonNewWeek.TabIndex = 7;
             this.buttonNewWeek.Text = "New Week";
             this.buttonNewWeek.UseVisualStyleBackColor = true;
