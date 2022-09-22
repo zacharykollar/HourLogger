@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,11 +28,11 @@ namespace HourLogger
             }
         }
         public DateTime StartTime { get => startTime; }
-
+        private System.Windows.Forms.Timer workTimer;
         public HourForm()
         {
+            workTimer = new();
             InitializeComponent();
-
             if (OutputFile.Equals(""))
             {
                 ChangeOutputFile();
@@ -85,6 +86,8 @@ namespace HourLogger
             double hoursWorked = Math.Round(DateTime.Now.Subtract(StartTime).TotalHours, 2);
             buttonStartEndWork.Text = "Start Work";
             WriteToFile(hoursWorked);
+            workTimer.Stop();
+            workTimer.Dispose();
         }
         
         /// <summary>
@@ -95,6 +98,18 @@ namespace HourLogger
             Working = true;
             buttonStartEndWork.Text = "Stop Work";
             startTime = DateTime.Now;
+            workTimer = new()
+            {
+                Interval = 6000,
+                
+            };
+            workTimer.Tick += new EventHandler(WorkTimerTick);
+            workTimer.Start();
+        }
+
+        void WorkTimerTick(object sender, EventArgs e)
+        {
+            textBoxLoggedHours.Text = Math.Round((DateTime.Now - startTime).TotalHours, 2).ToString();
         }
 
         #region Designer Event Handlers
