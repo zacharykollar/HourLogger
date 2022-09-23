@@ -107,12 +107,22 @@ namespace HourLogger
             workTimer.Start();
         }
 
+        /// <summary>
+        /// Handled by the workTimer. Updates the logged hours textbox when called.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         void WorkTimerTick(object? sender, EventArgs e)
         {
             textBoxLoggedHours.Text = Math.Round((DateTime.Now - startTime).TotalHours, 2).ToString();
         }
 
         #region Designer Event Handlers
+        /// <summary>
+        /// Calls the two methods StartWork and StopWork. No actual work is done here. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonStartEndWork_Click(object sender, EventArgs e)
         {
             if (working)
@@ -125,6 +135,11 @@ namespace HourLogger
             }
         }
 
+        /// <summary>
+        /// Calls WriteToFile to input time from the updown.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ButtonInputHours_Click(object sender, EventArgs e)
         {
             WriteToFile((double) UpDownInputHours.Value);
