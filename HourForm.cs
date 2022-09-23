@@ -86,6 +86,7 @@ namespace HourLogger
             double hoursWorked = Math.Round(DateTime.Now.Subtract(StartTime).TotalHours, 2);
             buttonStartEndWork.Text = "Start Work";
             WriteToFile(hoursWorked);
+            textBoxLoggedHours.Text = "";
             workTimer.Stop();
             workTimer.Dispose();
         }
@@ -107,7 +108,7 @@ namespace HourLogger
             workTimer.Start();
         }
 
-        void WorkTimerTick(object sender, EventArgs e)
+        void WorkTimerTick(object? sender, EventArgs e)
         {
             textBoxLoggedHours.Text = Math.Round((DateTime.Now - startTime).TotalHours, 2).ToString();
         }
