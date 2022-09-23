@@ -101,8 +101,7 @@ namespace HourLogger
             startTime = DateTime.Now;
             workTimer = new()
             {
-                Interval = 6000,
-                
+                Interval = 36000,
             };
             workTimer.Tick += new EventHandler(WorkTimerTick);
             workTimer.Start();
